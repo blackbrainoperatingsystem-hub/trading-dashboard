@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        /* Supprime les marges et force le fond sombre de Notion */
         body {
             margin: 0;
             padding: 0;
-            background-color: #191919; 
+            background-color: #191919;
             overflow: hidden;
+            height: 78px; /* On force la hauteur pour "couper" ce qui dépasse */
         }
 
-        /* --- LA RÈGLE POUR CACHER LE TEXTE --- */
-        /* On cible toutes les classes possibles que TradingView utilise pour son copyright */
+        /* Masque tout élément de copyright TradingView */
         .tradingview-widget-copyright, 
-        div[class*="copyright"], 
+        #tradingview-copyright,
+        div[class*="copyright"],
         span[class*="copyright"],
         a[href*="tradingview.com"] {
             display: none !important;
             visibility: hidden !important;
             opacity: 0 !important;
-            height: 0 !important;
+            pointer-events: none !important;
         }
     </style>
 </head>
