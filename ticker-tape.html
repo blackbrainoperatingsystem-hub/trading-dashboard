@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        /* On verrouille la taille de la page pour que le texte ne puisse pas exister */
         html, body {
             margin: 0 !important;
             padding: 0 !important;
             background-color: #191919;
             overflow: hidden !important;
-            height: 46px !important; /* Hauteur exacte du bandeau */
+            /* On monte à 72px pour laisser passer le prix et le graphique */
+            height: 72px !important; 
             width: 100%;
         }
 
         #container {
-            height: 46px !important;
+            height: 72px !important;
             overflow: hidden !important;
             position: relative;
         }
 
-        /* Une sécurité de plus pour essayer de le masquer si possible */
-        iframe, .tradingview-widget-copyright {
+        /* On garde la sécurité pour le texte au cas où */
+        .tradingview-widget-copyright, 
+        div[class*="copyright"], 
+        a[href*="tradingview.com"] {
             display: none !important;
+            visibility: hidden !important;
         }
     </style>
 </head>
