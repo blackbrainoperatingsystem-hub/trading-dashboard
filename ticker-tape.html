@@ -7,8 +7,20 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #191919; /* Couleur exacte du mode sombre de Notion */
-            overflow: hidden; /* Empêche les barres de défilement inutiles */
+            background-color: #191919; 
+            overflow: hidden;
+        }
+
+        /* --- LA RÈGLE POUR CACHER LE TEXTE --- */
+        /* On cible toutes les classes possibles que TradingView utilise pour son copyright */
+        .tradingview-widget-copyright, 
+        div[class*="copyright"], 
+        span[class*="copyright"],
+        a[href*="tradingview.com"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
         }
     </style>
 </head>
