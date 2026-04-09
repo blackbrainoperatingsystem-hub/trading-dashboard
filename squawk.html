@@ -1,22 +1,49 @@
-<!-- FinancialJuice Widget-->
-<div id="financialjuice-voice-widget-container" ></div>
-<!--Place this script after </body> -->
-<script type="text/javascript">
-    var jo = document.createElement("script");
-    jo.type = "text/javascript";
-    jo.id= "FJ-Widgets";
-    var r = Math.floor(Math.random() * (9999 - 0 + 1) + 0);
-    jo.src = "https://feed.financialjuice.com/widgets/widgets.js?r=" + r + "";
-    jo.onload = function(){ 
-    var options = {};
-     options.container = "financialjuice-voice-widget-container";
-    options.mode = "standard";
-    options.width= "350px";
-    options.height= "undefinedpx";
-    options.backColor= "";
-    options.fontColor= "";
-    options.widgetType= "Voice";
-   new window.FJWidgets.createWidget(options);
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* Force le fond sombre de Notion sur toute la page */
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #191919 !important;
+            overflow: hidden;
+            display: flex;
+            justify-content: center; /* Centre le widget horizontalement */
+            align-items: flex-start;
+        }
+
+        /* Supprime les bordures blanches éventuelles du container */
+        #financialjuice-voice-widget-container {
+            background-color: #191919 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="financialjuice-voice-widget-container"></div>
+
+    <script type="text/javascript">
+        var jo = document.createElement("script");
+        jo.type = "text/javascript";
+        jo.id = "FJ-Widgets";
+        var r = Math.floor(Math.random() * (9999 - 0 + 1) + 0);
+        jo.src = "https://feed.financialjuice.com/widgets/widgets.js?r=" + r;
+        
+        jo.onload = function() { 
+            var options = {};
+            options.container = "financialjuice-voice-widget-container";
+            options.mode = "standard";
+            options.width = "350px";
+            options.height = "120px"; // On définit une hauteur propre
+            options.backColor = "#191919"; // Couleur de fond du widget
+            options.fontColor = "#FFFFFF"; // Couleur du texte en blanc
+            options.widgetType = "Voice";
+            new window.FJWidgets.createWidget(options);
         } 
-     document.getElementsByTagName("head")[0].appendChild(jo);
-</script>
+        document.getElementsByTagName("head")[0].appendChild(jo);
+    </script>
+
+</body>
+</html>
